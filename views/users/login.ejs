@@ -1,0 +1,58 @@
+<% layout('layouts/boilerplate') %>
+
+<style>
+  .login-container {
+    max-width: 450px;
+    margin: 60px auto;
+    border: 1px solid #ddd;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  }
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #ff385c;
+  }
+  .btn-airbnb {
+    background-color: #ff385c;
+    color: white;
+  }
+  .btn-airbnb:hover {
+    background-color: #e11d48;
+  }
+</style>
+
+<div class="login-container">
+  <h3 class="text-center mb-4 fw-bold">Welcome to WanderLust</h3>
+  
+  <% if (error && error.length) { %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <%= error %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+  <% } %>
+
+  <form method="POST" action="/login">
+    <div class="mb-3">
+      <label for="username" class="form-label">Username or Email</label>
+      <input type="text" class="form-control" id="username" name="username" placeholder="Enter username or email" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+    </div>
+
+    <button type="submit" class="btn btn-airbnb w-100">Log In</button>
+  </form>
+
+  <hr class="my-4">
+
+  <div class="text-center">
+    <p class="text-muted">Or continue with</p>
+    <div class="d-grid gap-2">
+      <button class="btn btn-outline-dark" disabled><i class="bi bi-google me-2"></i>Google</button>
+      <button class="btn btn-outline-dark" disabled><i class="bi bi-apple me-2"></i>Apple</button>
+    </div>
+  </div>
+</div>

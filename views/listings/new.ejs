@@ -1,0 +1,131 @@
+<% layout("layouts/boilerplate") %>
+<br />
+
+<div class="row">
+  <div class="col-8 offset-2">
+    <h3><i class="bi bi-plus-circle"></i> Create a New Listing</h3>
+    <form method="POST" action="/listings" enctype="multipart/form-data" novalidate class="needs-validation">
+
+      <!-- Title -->
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-type"></i> Title</label>
+        <input type="text" name="listing[title]" class="form-control" placeholder="Enter a catchy Title" required />
+      </div>
+
+      <!-- Description -->
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-card-text"></i> Description</label>
+        <textarea name="listing[description]" class="form-control" placeholder="Enter Description" required></textarea>
+      </div>
+
+      <!-- Category -->
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-tag"></i> Category</label>
+        <select class="form-select" name="listing[category]" required>
+          <option disabled selected>Select Category</option>
+          <option>Apartment</option>
+          <option>House</option>
+          <option>Villa</option>
+          <option>Cottage</option>
+          <option>Cabin</option>
+          <option>Farmhouse</option>
+        </select>
+      </div>
+
+      <!-- Image -->
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-image"></i> Upload Image</label>
+        <input name="listing[image]" type="file" class="form-control" required>
+      </div>
+
+      <!-- Price -->
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-currency-rupee"></i> Price</label>
+        <input type="number" name="listing[price]" class="form-control" placeholder="Enter Price" required />
+      </div>
+
+      <!-- Location -->
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-geo-alt"></i> Location</label>
+        <input type="text" name="listing[location]" class="form-control" placeholder="Enter Location" required />
+      </div>
+
+      <!-- Country -->
+      <div class="mb-3">
+        <label class="form-label"><i class="bi bi-globe"></i> Country</label>
+        <input type="text" name="listing[country]" class="form-control" placeholder="Enter Country" required />
+      </div>
+
+      <!-- Guest Details -->
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label class="form-label"><i class="bi bi-door-open"></i> Bedrooms</label>
+          <input type="number" name="listing[bedrooms]" class="form-control" required />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="form-label"><i class="bi bi-bed"></i> Beds</label>
+          <input type="number" name="listing[beds]" class="form-control" required />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="form-label"><i class="bi bi-droplet"></i> Bathrooms</label>
+          <input type="number" name="listing[bathrooms]" class="form-control" required />
+        </div>
+      </div>
+
+      <!-- Amenities Section -->
+      <div class="mb-3">
+        <label class="form-label">
+          <i class="bi bi-ui-checks"></i> Amenities
+        </label>
+        <div class="row">
+          <div class="col-md-6 mb-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="listing[amenities][]" value="wifi" id="wifi">
+              <label class="form-check-label" for="wifi">
+                <i class="bi bi-wifi"></i> Wi-Fi
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="listing[amenities][]" value="kitchen" id="kitchen">
+              <label class="form-check-label" for="kitchen">
+                <i class="bi bi-cup-straw"></i> Kitchen
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="listing[amenities][]" value="tv" id="tv">
+              <label class="form-check-label" for="tv">
+                <i class="bi bi-tv"></i> TV
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="listing[amenities][]" value="parking" id="parking">
+              <label class="form-check-label" for="parking">
+                <i class="bi bi-car-front"></i> Free Parking
+              </label>
+            </div>
+          </div>
+          <div class="col-md-6 mb-2">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="listing[amenities][]" value="ac" id="ac">
+              <label class="form-check-label" for="ac">
+                <i class="bi bi-snow2"></i> Air Conditioning
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-dark w-100 mt-3">
+        <i class="bi bi-plus-circle-dotted"></i> Add Listing
+      </button>
+    </form>
+    <br><br><br>
+  </div>
+</div>
